@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" font-family="Inter, Segoe UI, sans-serif">
+  <defs>
+    <linearGradient id="b1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4361ee;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#3a0ca3;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="b2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7209b7;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#560bad;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="b3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f72585;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#b5179e;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="sh">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#888"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="480" fill="#faf8ff" rx="12"/>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" font-size="16" font-weight="700" fill="#1a0a3a">Hybrid CNN-LSTM for Intelligent Cyber Intrusion Detection</text>
+
+  <!-- Step 1: Input -->
+  <rect x="20" y="160" width="110" height="130" rx="12" fill="#f0ecff" stroke="#c4b8ef" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="75" y="200" text-anchor="middle" font-size="12" font-weight="600" fill="#2a0a5a">NSL-KDD</text>
+  <text x="75" y="218" text-anchor="middle" font-size="12" font-weight="600" fill="#2a0a5a">Dataset</text>
+  <text x="75" y="242" text-anchor="middle" font-size="9" fill="#6a5a8a">Network Traffic</text>
+  <text x="75" y="256" text-anchor="middle" font-size="9" fill="#6a5a8a">Features</text>
+
+  <!-- Arrow -->
+  <line x1="130" y1="225" x2="160" y2="225" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Step 2: RFE -->
+  <rect x="170" y="170" width="110" height="110" rx="12" fill="url(#b1)" filter="url(#sh)"/>
+  <text x="225" y="208" text-anchor="middle" font-size="13" font-weight="700" fill="white">RFE</text>
+  <text x="225" y="228" text-anchor="middle" font-size="10" fill="#c4d0ff">Feature</text>
+  <text x="225" y="244" text-anchor="middle" font-size="10" fill="#c4d0ff">Selection</text>
+  <text x="225" y="264" text-anchor="middle" font-size="9" fill="#a0b4ff">Decision Tree</text>
+
+  <!-- Arrow -->
+  <line x1="280" y1="225" x2="310" y2="225" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Step 3: CNN -->
+  <rect x="320" y="140" width="130" height="170" rx="12" fill="url(#b2)" filter="url(#sh)"/>
+  <text x="385" y="178" text-anchor="middle" font-size="15" font-weight="700" fill="white">1D CNN</text>
+  <line x1="340" y1="190" x2="430" y2="190" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="385" y="210" text-anchor="middle" font-size="10" fill="#dcc8ff">Conv1D (64 filters)</text>
+  <text x="385" y="228" text-anchor="middle" font-size="10" fill="#dcc8ff">MaxPool + BN</text>
+  <line x1="340" y1="238" x2="430" y2="238" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="385" y="256" text-anchor="middle" font-size="10" fill="#dcc8ff">Conv1D (128 filters)</text>
+  <text x="385" y="274" text-anchor="middle" font-size="10" fill="#dcc8ff">MaxPool + BN</text>
+  <text x="385" y="298" text-anchor="middle" font-size="9" fill="#b898e8">Spatial Features</text>
+
+  <!-- Arrow -->
+  <line x1="450" y1="225" x2="480" y2="225" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Step 4: LSTM -->
+  <rect x="490" y="160" width="130" height="130" rx="12" fill="url(#b3)" filter="url(#sh)"/>
+  <text x="555" y="200" text-anchor="middle" font-size="15" font-weight="700" fill="white">LSTM</text>
+  <text x="555" y="222" text-anchor="middle" font-size="11" fill="#ffc8e8">100 Units</text>
+  <line x1="510" y1="234" x2="600" y2="234" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="555" y="254" text-anchor="middle" font-size="10" fill="#ffc8e8">Temporal</text>
+  <text x="555" y="270" text-anchor="middle" font-size="10" fill="#ffc8e8">Dependencies</text>
+
+  <!-- Arrow -->
+  <line x1="620" y1="225" x2="650" y2="225" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Step 5: Dense -->
+  <rect x="660" y="175" width="100" height="100" rx="12" fill="#f0ecff" stroke="#c4b8ef" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="710" y="210" text-anchor="middle" font-size="13" font-weight="600" fill="#2a0a5a">Dense</text>
+  <text x="710" y="230" text-anchor="middle" font-size="13" font-weight="600" fill="#2a0a5a">Layer</text>
+  <text x="710" y="254" text-anchor="middle" font-size="9" fill="#6a5a8a">Binary Output</text>
+
+  <!-- Arrow -->
+  <line x1="760" y1="225" x2="790" y2="225" stroke="#888" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Output -->
+  <rect x="800" y="180" width="85" height="90" rx="10" fill="#f0ecff" stroke="#c4b8ef" stroke-width="1.5" filter="url(#sh)"/>
+  <text x="842" y="212" text-anchor="middle" font-size="11" font-weight="600" fill="#28a745">Normal</text>
+  <text x="842" y="232" text-anchor="middle" font-size="8" fill="#6a5a8a">or</text>
+  <text x="842" y="250" text-anchor="middle" font-size="11" font-weight="600" fill="#f72585">Intrusion</text>
+
+  <!-- Metrics -->
+  <rect x="300" y="400" width="140" height="36" rx="18" fill="#4361ee" filter="url(#sh)"/>
+  <text x="370" y="423" text-anchor="middle" font-size="13" font-weight="700" fill="white">Accuracy: 95%</text>
+
+  <rect x="460" y="400" width="140" height="36" rx="18" fill="#7209b7" filter="url(#sh)"/>
+  <text x="530" y="423" text-anchor="middle" font-size="13" font-weight="700" fill="white">F1-Score: 0.94</text>
+
+  <!-- Label -->
+  <rect x="20" y="10" width="150" height="24" rx="6" fill="#4361ee"/>
+  <text x="95" y="26" text-anchor="middle" font-size="10" font-weight="600" fill="white">Computers &amp; Security</text>
+</svg>
