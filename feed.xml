@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shubh8434.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shubh8434.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-09-21T04:22:39-04:00</updated><id>https://shubh8434.github.io/feed.xml</id><title type="html">Shubham Sharma</title><subtitle>MScAC student at University of Toronto | AI, Multimodal Learning &amp; Agentic Systems Researcher.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://shubh8434.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://shubh8434.github.io/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-09-21T17:15:20-04:00</updated><id>https://shubh8434.github.io/feed.xml</id><title type="html">Shubham Sharma</title><subtitle>MScAC student at University of Toronto | AI, Multimodal Learning &amp; Agentic Systems Researcher.
 </subtitle><entry><title type="html">a post with marimo snippets</title><link href="https://shubh8434.github.io/blog/2025/marimo/" rel="alternate" type="text/html" title="a post with marimo snippets" /><published>2025-04-28T08:00:00-04:00</published><updated>2025-04-28T08:00:00-04:00</updated><id>https://shubh8434.github.io/blog/2025/marimo</id><content type="html" xml:base="https://shubh8434.github.io/blog/2025/marimo/"><![CDATA[<p><a href="https://marimo.io">marimo</a> notebooks can run Python directly in the reader’s browser. Opt a page in from its front matter:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
@@ -242,7 +242,7 @@ Content 2
 
 <p>With this you can generate visualizations like:</p>
 
-<ul id="log" class="tab" data-tab="1b440a4f-a672-44aa-b7d7-f778fb49d681" data-name="log">
+<ul id="log" class="tab" data-tab="5a3205b2-fbf2-4afa-b1d1-085b5a134b9a" data-name="log">
   
       <li class="active" id="log-php">
           <a href="#">php </a>
@@ -257,7 +257,7 @@ Content 2
       </li>
   
 </ul>
-<ul class="tab-content" id="1b440a4f-a672-44aa-b7d7-f778fb49d681" data-name="log">
+<ul class="tab-content" id="5a3205b2-fbf2-4afa-b1d1-085b5a134b9a" data-name="log">
   
       <li class="active">
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">var_dump</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span>
@@ -281,7 +281,7 @@ Content 2
 
 <h2 id="another-example">Another example</h2>
 
-<ul id="data-struct" class="tab" data-tab="fc8af817-e8a0-4577-a5f0-508b85cc16bf" data-name="data-struct">
+<ul id="data-struct" class="tab" data-tab="56d2ce9c-edec-4231-b00e-98a8c49d09bc" data-name="data-struct">
   
       <li class="active" id="data-struct-yaml">
           <a href="#">yaml </a>
@@ -292,7 +292,7 @@ Content 2
       </li>
   
 </ul>
-<ul class="tab-content" id="fc8af817-e8a0-4577-a5f0-508b85cc16bf" data-name="data-struct">
+<ul class="tab-content" id="56d2ce9c-edec-4231-b00e-98a8c49d09bc" data-name="data-struct">
   
       <li class="active">
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hello</span><span class="pi">:</span>
@@ -314,7 +314,7 @@ Content 2
 
 <h2 id="tabs-for-something-else">Tabs for something else</h2>
 
-<ul id="something-else" class="tab" data-tab="0376c168-4748-4a08-8a83-1e2de34e59e8" data-name="something-else">
+<ul id="something-else" class="tab" data-tab="8e8f1231-b38a-40c4-ac7d-ecb83370fd0a" data-name="something-else">
   
       <li class="active" id="something-else-text">
           <a href="#">text </a>
@@ -329,7 +329,7 @@ Content 2
       </li>
   
 </ul>
-<ul class="tab-content" id="0376c168-4748-4a08-8a83-1e2de34e59e8" data-name="something-else">
+<ul class="tab-content" id="8e8f1231-b38a-40c4-ac7d-ecb83370fd0a" data-name="something-else">
   
       <li class="active">
 <p>Regular text</p>
