@@ -29,19 +29,21 @@
   })(window, document, "clarity", "script", CLARITY_ID);
 
   // --- GoatCounter: records visits (private dashboard) ---
-  var GC_ENDPOINT = "https://shubhamsharma.goatcounter.com/count";
+  var GC_BASE = "https://shubhamsharma.goatcounter.com";
   var gc = document.createElement("script");
   gc.async = true;
   gc.src = "//gc.zgo.at/count.js";
-  gc.setAttribute("data-goatcounter", GC_ENDPOINT);
+  gc.setAttribute("data-goatcounter", GC_BASE + "/count");
   document.head.appendChild(gc);
 
   // --- Visible total visitor count in the footer ---
-  // Reads the real total from GoatCounter's public JSON counter endpoint and
-  // displays it. Requires "Allow adding the count to your pages" to be enabled
-  // in GoatCounter settings (Site settings -> "Allow view counts").
-  var GC_COUNT_JSON =
-    "https://shubhamsharma.goatcounter.com/counter/TOTAL.json";
+  // GoatCounter's site-wide "TOTAL" bucket is only populated going forward and
+  // is cached up to 4h, so early on it can read 0 even though real visits are
+  // recorded under actual page paths. To show an accurate number, we read the
+  // per-path counts for the main pages and sum them. Falls back silently if the
+  // counter endpoints aren't reachable.
+  // Requires "Allow adding visitor counts on your website" enabled in settings.
+  var GC_PATHS = ["/", "/cv/", "/projects/", "/publications/", "/blog/", "/news/"];
 
   function renderCounter(text) {
     var footer =
@@ -63,15 +65,28 @@
       "<span>" + text + " total visits</span>";
   }
 
-  function loadVisitorCount() {
-    fetch(GC_COUNT_JSON)
+  function fetchPathCount(path) {
+    var url = GC_BASE + "/counter/" + encodeURIComponent(path) + ".json";
+    return fetch(url)
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (data) {
-        if (data && data.count) {
-          renderCounter(String(data.count).trim());
+        if (!data || !data.count) return 0;
+        // count is a formatted string that may contain thousands separators
+        var n = parseInt(String(data.count).replace(/[^0-9]/g, ""), 10);
+        return isNaN(n) ? 0 : n;
+      })
+      .catch(function () { return 0; });
+  }
+
+  function loadVisitorCount() {
+    Promise.all(GC_PATHS.map(fetchPathCount))
+      .then(function (counts) {
+        var total = counts.reduce(function (a, b) { return a + b; }, 0);
+        if (total > 0) {
+          renderCounter(total.toLocaleString());
         }
       })
-      .catch(function () { /* stay silent if the count can't be fetched */ });
+      .catch(function () { /* stay silent on failure */ });
   }
 
   // --- Flag Counter: visible per-country flags + counts in the footer ---
